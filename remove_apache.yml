@@ -1,0 +1,17 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+  
+  - name: disable httpd
+    service:
+      name: httpd
+      enabled: no
+
+
+  - name: remove apache 2 package
+    yum:
+      name: httpd
+      state: absent
+
